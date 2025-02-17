@@ -5,9 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/react-weather-app/",
   plugins: [react()],
-  server: {
-    port: process.env.PORT || 4173, // Uses Railway's PORT
-    strictPort: true,
-    host: "0.0.0.0", // Ensures the server is accessible
+  build: {
+    outDir: 'dist',
   },
+  server: {
+    port: process.env.PORT || 4173,
+    strictPort: true,
+    host: "0.0.0.0",
+  },
+  preview: {
+    port: process.env.PORT || 4173,
+    host: "0.0.0.0",
+  }
 })
